@@ -1,0 +1,81 @@
+[debug] [2019-09-13T08:40:30.545Z] ----------------------------------------------------------------------
+[debug] [2019-09-13T08:40:30.549Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Bittu Nag\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2019-09-13T08:40:30.550Z] CLI Version:   7.1.0
+[debug] [2019-09-13T08:40:30.550Z] Platform:      win32
+[debug] [2019-09-13T08:40:30.550Z] Node Version:  v10.16.0
+[debug] [2019-09-13T08:40:30.551Z] Time:          Fri Sep 13 2019 14:10:30 GMT+0530 (India Standard Time)
+[debug] [2019-09-13T08:40:30.551Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-09-13T08:40:30.574Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-09-13T08:40:30.576Z] > authorizing via signed-in user
+[debug] [2019-09-13T08:40:30.576Z] [iam] checking project shopping-site-51a0c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-09-13T08:40:30.579Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/shopping-site-51a0c:testIamPermissions  
+
+[debug] [2019-09-13T08:40:34.183Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-13T08:40:34.189Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/shopping-site-51a0c  
+ 
+[debug] [2019-09-13T08:40:35.055Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'shopping-site-51a0c'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-09-13T08:40:35.062Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/shopping-site-51a0c/versions  
+
+[debug] [2019-09-13T08:40:56.694Z] Error: connect ETIMEDOUT 216.58.203.170:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 216.58.203.170:443
+[debug] [2019-09-13T08:41:13.703Z] ----------------------------------------------------------------------
+[debug] [2019-09-13T08:41:13.707Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Bittu Nag\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2019-09-13T08:41:13.707Z] CLI Version:   7.1.0
+[debug] [2019-09-13T08:41:13.708Z] Platform:      win32
+[debug] [2019-09-13T08:41:13.708Z] Node Version:  v10.16.0
+[debug] [2019-09-13T08:41:13.708Z] Time:          Fri Sep 13 2019 14:11:13 GMT+0530 (India Standard Time)
+[debug] [2019-09-13T08:41:13.708Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-09-13T08:41:13.726Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-09-13T08:41:13.728Z] > authorizing via signed-in user
+[debug] [2019-09-13T08:41:13.728Z] [iam] checking project shopping-site-51a0c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-09-13T08:41:13.732Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/shopping-site-51a0c:testIamPermissions  
+
+[debug] [2019-09-13T08:41:16.649Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-13T08:41:16.655Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/shopping-site-51a0c  
+ 
+[debug] [2019-09-13T08:41:17.448Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'shopping-site-51a0c'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-09-13T08:41:17.466Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/shopping-site-51a0c/versions  
+
+[debug] [2019-09-13T08:41:39.026Z] Error: connect ETIMEDOUT 216.58.203.170:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 216.58.203.170:443
+[debug] [2019-09-13T08:41:52.607Z] ----------------------------------------------------------------------
+[debug] [2019-09-13T08:41:52.612Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Bittu Nag\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-09-13T08:41:52.612Z] CLI Version:   7.1.0
+[debug] [2019-09-13T08:41:52.612Z] Platform:      win32
+[debug] [2019-09-13T08:41:52.612Z] Node Version:  v10.16.0
+[debug] [2019-09-13T08:41:52.613Z] Time:          Fri Sep 13 2019 14:11:52 GMT+0530 (India Standard Time)
+[debug] [2019-09-13T08:41:52.613Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-09-13T08:41:52.631Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-09-13T08:41:52.633Z] > authorizing via signed-in user
+[debug] [2019-09-13T08:41:52.633Z] [iam] checking project shopping-site-51a0c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-09-13T08:41:52.636Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/shopping-site-51a0c:testIamPermissions  
+
+[debug] [2019-09-13T08:41:54.997Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-13T08:41:55.003Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/shopping-site-51a0c  
+ 
+[debug] [2019-09-13T08:41:55.712Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'shopping-site-51a0c'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-09-13T08:41:55.719Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/shopping-site-51a0c/versions  
+
+[debug] [2019-09-13T08:42:17.301Z] Error: connect ETIMEDOUT 216.58.203.170:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 216.58.203.170:443
