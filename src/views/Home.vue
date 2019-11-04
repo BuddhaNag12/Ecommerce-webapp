@@ -1,91 +1,40 @@
-
 <template>
-<div class="contents">
-
-
-  <template>
-  <div class="text-center">
-    <v-snackbar
-      v-model="snackbar"
-      :multi-line="multiLine"
-    >
-      <v-btn small flat color="grey" class="mx-2" @click="sortBy('price')" v-on="on">
-  
-   <v-icon left small >mdi-men</v-icon>
-   <span class="caption text-lowercase white--text">
-     by project person
-   </span>
- </v-btn>
-      <v-btn
-        color="red"
-        text
-        @click="snackbar = false"
-      >
-        Close
-      </v-btn>
-    </v-snackbar>
-  </div>
-</template>
-    <template>
+<div class="homeContent">
         <v-container>
           <v-row>
-            <v-col>
-    <v-carousel height="350px"  cycle  hide-delimiter-background
-    show-arrows-on-hover>
+            <v-col cols="sm12 12" >
+    <v-carousel height="350px"
+      cycle 
+     hide-delimiter-background
+    show-arrows-on-hover
+    delimiter-icon="mdi-minus">
     <v-carousel-item
-      v-for="item in featureProducts"
-      :key="item.price"
-      :src="item.avatar"
+      v-for="item in Allproducts"
+      :key="item.id"
+      :src="item.imageUrl"
       reverse-transition="fade-transition"
       transition="fade-transition"
-      contain 
       class="grey darken-4"
     >
     <h1 class="my-10 pa-10 text-center">{{item.name}}</h1>
     </v-carousel-item>
   </v-carousel>
-            </v-col>
-    </v-row>
-       
-  </v-container>
-</template>
-
-<template>
-  <h1 class="headline">Top picks</h1>
-  <v-container class="grey lighten-5">
-    <v-row no-gutters>
-     <v-col cols="lg12" v-for="items in products" :key="items.price">
-        <v-card   class="ma-3 text-xs-center" >
-             <v-responsive class="pt-4">
-                 <v-avatar size="200" class="grey lighten-2">
-                     <img :src="items.avatar" alt="avatar">
-                 </v-avatar>
-                    </v-responsive>
-                     <v-card-text>
-                        <div class="subheading">
-                            {{items.name}}
-                        </div>
-                        <div class="grey--text">
-                            {{items.price}}
-                        </div>
-                    </v-card-text>
-        </v-card>
-     </v-col>
+       </v-col>
     </v-row>
   </v-container>
-</template>
-  <v-container class="my-5" id="man">
-<h2 >man</h2>
+  
+ <v-container>
+      <h2 class="black--text font-weight-light" >For Fast Snacks</h2>
         <v-layout row wrap>
-            <v-flex xs12 sm6 md4 lg3 v-for="product in products " :key="product.price">       
+            <v-flex xs12 sm6 md4 lg3 v-for="product in Allproducts " :key="product.id">
                 <v-card 
-                    class="ma-3 text-xs-center"  >
-                    <v-responsive class="pt-4">
-                 <v-avatar size="200" class="grey lighten-2">
-                     <img :src="product.avatar" alt="avatar">
+                    class="ma-3 text-xs-center" hover  >
+                    <v-responsive class="pt-4" >
+                 <v-avatar size="200" class="grey lighten-2" >
+                     <img  :src="product.imageUrl" alt="avatar">
                  </v-avatar>
                     </v-responsive>
-                    <v-card-text>
+                    <v-card-text >
                         <div class="subheading">
                             {{product.name}}
                         </div>
@@ -93,86 +42,138 @@
                             {{product.price}}
                         </div>
                     </v-card-text>
-                            <v-card-actions>
-            <v-btn text  color="grey" flat>
-                <v-icon small center>
-                      mdi-product
-                </v-icon >
-                <span>buy</span>
-                </v-btn>
-                    <v-spacer></v-spacer>
-                  <v-btn text  color="grey" flat  :to="'/product/'+product.id">
+                    
+                    <v-card-actions>
+            <v-btn link  class="warning" :to="'/product/'+product.id">
                 <v-icon small center>
                       mdi-eye
                 </v-icon >
-                <span>view</span>
-                </v-btn>
-            </v-card-actions>
-             </v-card>
-            </v-flex>
-        </v-layout>
-  </v-container>
-  <v-container class="my-5" id="women">
-  
-<h2 >women</h2>
-        <v-layout row wrap>
-            <v-flex xs12 sm6 md4 lg3 v-for="product in products " :key="product.price">
-                <v-card 
-                    class="ma-3 text-xs-center"  >
-                    <v-responsive class="pt-4">
-                 <v-avatar size="200" class="grey lighten-2">
-                     <img :src="product.avatar" alt="avatar">
-                 </v-avatar>
-                    </v-responsive>
-                    <v-card-text>
-                        <div class="subheading">
-                            {{product.name}}
-                        </div>
-                        <div class="grey--text">
-                            {{product.price}}
-                        </div>
-                    </v-card-text>
-                            <v-card-actions>
-            <v-btn text  color="grey" flat >
-                <v-icon small center>
-                      mdi-product
-                </v-icon >
-                <span>buy</span>
+                <span>View</span>
                 </v-btn>
                    <v-spacer></v-spacer>
-                  <v-btn text  color="grey" flat :to="'/product/'+product.id" >
-                <v-icon small center>
-                      mdi-eye
+                  <v-btn link  color="primary"  @click.native="addProductToCart(product)" >
+                <v-icon small center >
+                      mdi-cart
                 </v-icon >
-                <span>view</span>
+                <span>add to cart</span>
                 </v-btn>
             </v-card-actions>
              </v-card>
             </v-flex>
         </v-layout>
+        </v-container>
 
-  </v-container>
-
+<v-container >
+  <v-row class="pa-3">
+    <v-col >
+      <v-sheet
+      class="mx-auto"
+     >
+      <v-slide-group
+        class="pa-2 "
+        :prev-icon="prevIcon ? 'mdi-minus' : undefined"
+        :next-icon="nextIcon ? 'mdi-plus' : undefined"
+      >
+        <v-slide-item
+         v-for="product in Allproducts " :key="product.id"
+          v-slot:default="{ active, toggle }"  
+        >
+         <v-hover>
+    <template v-slot:default="{ hover }">
+      <v-card
+        class="mx-auto pa-3"
+        max-width="200"
+      >
+      <v-responsive>
+        <v-avatar tile>
+          <v-img :src="product.imageUrl"></v-img>
+        </v-avatar>
+      </v-responsive>
+        <v-card-text>
+          <h2 class="title primary--text">{{product.name}}</h2>
+        </v-card-text>
+        <v-card-title>
+          <v-rating
+            :value="4"
+            dense
+            color="orange"
+            background-color="orange"
+            hover
+            class="mr-2"
+          ></v-rating>
+          <span class="primary--text subtitle-2">64 Reviews</span>
+        </v-card-title>
+        <v-scale-transition>
+          <v-overlay
+            v-if="hover"
+            absolute
+            color="grey"
+            :opacity="opacity">
+            <v-btn  @click.native="addProductToCart(product)" fab  dark small color="primary">
+              <v-icon>mdi-cart</v-icon>
+              </v-btn >
+                <v-btn :to="'/product/'+product.id" fab  dark small color="info">
+              <v-icon>mdi-eye</v-icon>
+           </v-btn>
+          </v-overlay>
+        </v-scale-transition>
+      </v-card>
+    </template>
+  </v-hover> 
+        </v-slide-item>
+      </v-slide-group>
+    </v-sheet>
+    </v-col>
+  </v-row>
+</v-container>
 </div>
+
 </template>
 
 <script>
 import { METHODS } from 'http';
-export default {
-  computed: {
+import { mapActions } from 'vuex';
+import firebase from "../firebase"
+import {db} from "../firebase";
+import storage from "../firebase"
 
-    featureProducts(){
-      return this.$store.getters.featuredProducts
-    },
-      products () {
-        return this.$store.getters.loadedProducts
-      }
-    },
-    methods:{
-      sortBy(param){
-          this.women.sort((a,b)=>a[param]<b[param] ? -1:1)
+export default {
+
+  data:()=>({
+     
+      model: null,
+      prevIcon: false,
+      nextIcon: false,
+      centerActive: false,
+      opacity: 0.2,
+      featuredProducts:[],
+      imgURL:[],
+      productId:"",    
+}),
+  computed: {
+       loading () {
+        return this.$store.getters.loading
       },
-        
-     }
+         Allproducts(){
+           return this.$store.getters.loadedProducts
+         },
+         
+    },
+
+    methods:{
+       ...mapActions([
+      'addProduct',
+      'currentProduct',
+    ]),
+
+     addProductToCart(product) {
+      this.addProduct(product)
+    },
+    addCurrentProduct(product) {
+      this.currentProduct(product)
+    },
+    
+  },
+
 }
 </script>
