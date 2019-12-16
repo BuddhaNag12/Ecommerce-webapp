@@ -1,13 +1,19 @@
 <template>
-       <v-layout row wrap>
-             <v-card
+         <v-container>
+           <v-row>
+             <v-col class="mx-auto pr-4"  v-if="numberOfItems<=0">
+             <v-alert type="info"  >
+             Cart is empty
+             </v-alert> 
+         </v-col>
+
+          <v-card
     class="mx-auto"
- 
     tile
   >
-         <v-list flat>
+         <v-list >
       <v-subheader class="justify-center"  v-if="numberOfItems>=1">Items in the cart</v-subheader>
-      <v-subheader class="justify-center"  v-if="numberOfItems<=0">cart is empty</v-subheader>
+      
         <v-list-item
         v-for="(product, index) in getProductsInCart" :key="index">
       
@@ -24,7 +30,8 @@
     </v-list>
       <div class="subheading"  v-if="hasProduct()">   Total: Rs. {{ totalPrice() }}, 00</div>
      </v-card>
-       </v-layout>
+       </v-row>
+         </v-container>
 </template>
 
 <script>
@@ -45,7 +52,7 @@ export default {
     ]),
     hasProduct() {
       this.numberOfItems= this.getProductsInCart.length
-      return this.getProductsInCart.length > 0;
+      return this.getProductsInCart.length > 0
     },
     totalPrice() {
       return this.getProductsInCart.reduce((current, next) =>

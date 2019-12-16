@@ -1,9 +1,16 @@
 <template>
   <v-app class="grey lighten-4">
+  
     <navbar />
-    <v-content>
-      <router-view class="text-center my-10 display-2 blue--text"></router-view>
+   
+    <v-content >
+  <router-view class="text-center  display-2 blue--text">
+    
+  </router-view>
+     
     </v-content>
+    
+
    <footers />
   </v-app>
 
@@ -18,3 +25,4 @@ export default {
   components: { navbar,footers},
 };
 </script>
+

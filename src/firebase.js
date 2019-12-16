@@ -28,9 +28,9 @@
 //     });
 //   }
 
-//   export const db = firebase.database()
+//    const db = firebase.database()
 //   export const firebaseAuth = firebase.auth
-//   var storage = firebase.storage
+ 
+//   export default db
 
-//   export default storage;
 

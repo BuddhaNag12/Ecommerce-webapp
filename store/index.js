@@ -5,6 +5,7 @@ import firebase, { firestore } from 'firebase/app'
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
+
   state: {
     loadedProducts: [],
     user: null,
@@ -12,7 +13,7 @@ export const store = new Vuex.Store({
     admin:[],
     loading: false,
     error: null,
-    cartProducts: [],
+    cartProducts:[],
     currentProduct: {},
   },
   mutations: {
@@ -48,9 +49,11 @@ export const store = new Vuex.Store({
       }, 
       addProduct:(state,payload)=>{
         state.loadedProducts.push(payload)
-      } 
+      },
+     
   },
   actions: {
+
     loadProducts ({commit}) {
       commit('setLoading', true)
       firebase.database().ref('products').once('value')
@@ -91,14 +94,17 @@ export const store = new Vuex.Store({
         key:payload.key,
         quantity:payload.quantity
       }
-      firebase.database().ref('products').push(products)   
-        .then(() => {
-          commit('addProduct',products)
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-      },
+      firebase.database().ref('products').push(products) 
+      .then(() => {
+        commit('addProduct',products)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    },  
+   
+    
+      
       addUser({commit},payload){
         commit('setLoading',true)
         commit('clearError')
@@ -156,18 +162,8 @@ export const store = new Vuex.Store({
           }
         )
     },
-    adminCheck({commit},payload){
-      commit('setLoading', true)
-      commit('clearError')
-      firebase.database().ref('admin').once('value').then((data)=>{
-        const users = []
-        users.push({
-        username:data.username,
-        password:data.password
-        })
-        commit('setAdmin', users)
-      })
-    },
+  
+
     autoSignIn ({commit}, payload) {
       commit('setUser', {id: payload.uid, })
     },
@@ -199,9 +195,10 @@ export const store = new Vuex.Store({
         return productA.price > productB.price
       })
     },
-    featuredProducts (state, getters) {
+    featuredProducts (getters) {
       return getters.loadedProducts.slice(0, 5)
     },
+    
     loadedProduct (state) {
       return (productId) => {
         return state.loadedProducts.find((product) => {

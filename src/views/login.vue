@@ -56,8 +56,6 @@
       return {
         email: '',
         password: '',
-     
-    
       }
     },
     computed: {
@@ -75,6 +73,7 @@
     methods: {
       onSignin () {
         this.$store.dispatch('signUserIn', {email: this.email, password: this.password})
+         
       }
     },
    

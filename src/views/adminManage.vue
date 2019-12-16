@@ -45,7 +45,7 @@
     </v-layout >
     <v-layout row class="justify-center">
       <v-flex xs8>
-        <form @submit.prevent="onCreateMeetup">
+        <form @submit.prevent="OnCreateProducts">
           <v-layout row class="justify-center">
             <v-flex xs12 sm6 >
               <v-text-field
@@ -198,7 +198,7 @@ import { mapActions,mapGetters } from 'vuex';
       },
     },
     methods: {
-      onCreateMeetup () {
+      OnCreateProducts () {
         if (!this.formIsValid) {
           return
         }

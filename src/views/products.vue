@@ -1,9 +1,9 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <v-layout row wrap>
-      <v-flex xs12 lg6>
+      <v-flex xs12 lg6 class="pa-2">
 
-        <v-card flat >
+        <v-card  >
             <v-avatar size="400" class="grey lighten-2 ">
             <img :src="products.imageUrl" alt="avatar" width="400" >
          </v-avatar>
@@ -11,20 +11,24 @@
         </v-card>
 
       </v-flex>
-      <v-flex lg6 class="pl-2 mx-auto "  >
-        <v-card flat>
+      <v-flex lg6 class="mx-auto pa-2"  >
+        <v-card >
          
         <v-card-actions >
           <div class="text-lg-left pa-2 text-sm-center">
-         <v-btn text   to="/" class="font-weight-light back-btn " tile>Back to shop</v-btn>  
+         <v-btn text   to="/" class="font-weight-light back-btn " tile>
+          <v-icon left dark>mdi-arrow-left</v-icon>
+         Back to shop
+        
+         </v-btn>  
           </div>
       </v-card-actions>
           <v-card-text>
-            <div class="font-weight-bold text-uppercase display-4">{{products.name}}</div>
-            <div class="heading red--text text-lg-left display-2 text-sm-center">Rs.{{products.price}}/-</div>
+            <div class="font-weight-bold blue-grey--text text-uppercase display-2">{{products.name}}</div>
+            <div class="body-2 black--text  text-sm-center">Rs.{{products.price}}/-</div>
           </v-card-text>
           <v-card-text>
-               <v-container id="dropDown">
+               <v-container id="dropDown" fluid>
     <v-row>
       <v-col cols="12" sm="4">
         <p>Pack</p>

@@ -1,10 +1,9 @@
 <template>
   <v-container>
        <v-layout row wrap >
-         
-           <v-flex xs12 sm8 md3 lg4  v-for="products in catProducts" :key="products.id"  >
+           <v-flex xs12 sm8 md3 lg4  class=" d-flex justify-lg-space-around" v-for="products in catProducts" :key="products.id"  >
           <v-card
-          class="mx-auto ma-4" 
+          class="mx-auto ma-4 " 
             max-width="344"
             tile
             hover
